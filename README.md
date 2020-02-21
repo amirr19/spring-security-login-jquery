@@ -1,4 +1,4 @@
-#Spring Security and Login By jQuery
+# Spring Security and Login By jQuery
 This project is just for showing that how can we setup 
 an html and jquery front-end project 
 which connects to spring boot secured back-end project.
