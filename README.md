@@ -45,7 +45,7 @@ look into `loginSuccessful()` method. we have to put `username` and `password` i
 window.authenticatedUsername = username;
 window.authenticatedPassword = password;
 ```  
-
+---
 In `SpringSecurityConfig.java` class notice that how we configure `CORS` by this code  
 ```java
 @Bean
@@ -75,8 +75,8 @@ protected void configure(HttpSecurity http) throws Exception {
             .csrf().disable()
 ...
 ```
-
-And Finally notice what happend in desktop.js file. For sending request `username` and `password` 
+---
+And Finally notice what happened in desktop.js file. For sending request `username` and `password` 
 are taken from shared variable window. Use this code where ever you want to send request to secured spring boot.
 ```javascript
 function receiveFirstLoginMessage() {
