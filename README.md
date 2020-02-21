@@ -42,7 +42,7 @@ success: function (data, textStatus) {
         }
 ```    
 look into `loginSuccessful()` method. we have to put `username` and `password` in 
-`shared value window container`. because further we need then for restful request in other pages.
+`shared value window container`. because further we need them for `sending restful requests in other pages`.
 
 ```javascript
 window.authenticatedUsername = username;
