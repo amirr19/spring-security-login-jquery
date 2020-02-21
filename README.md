@@ -5,7 +5,10 @@ which connects to spring boot secured back-end project.
 
 ## How to run the application  
 In order to run application you only need to run `spring boot` application and then
-go to [http://localhost:9002](http://localhost:9002) address in your web browser.  
+go to [http://localhost:9002](http://localhost:9002) address in your web browser, 
+then you would see the login page. what would happen if you type wrong username and password?  
+> Hey guys username is `user` and password is `pass` which are stored in `memory`!  
+  
 **Alternative method**  
 Run `spring boot` application then run `index.html` file in `JetBrain Live Server` you know it how!  
 **Setup database**  
