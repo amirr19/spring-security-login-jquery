@@ -14,7 +14,7 @@ you need to notice `application.properties` file to be informed about database n
  
 
 ## Notices
-**Notice two files first:** SpringSecurityConfig.java and login.js.
+**First Notice two files first:** `SpringSecurityConfig.java` and `login.js`.
     
         
 In **`login.js`** notice this code:  
