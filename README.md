@@ -3,6 +3,16 @@ This project is just for showing that how can we setup
 an html and jquery front-end project 
 which connects to spring boot secured back-end project.
 
+## How to run the application  
+In order to run application you only need to run `spring boot` application and then
+go to [http://localhost:9002](http://localhost:9002) address in your web browser.  
+**Alternative method**  
+Run `spring boot` application then run `index.html` file in `JetBrain Live Server` you know it how!  
+**Setup database**  
+Although in this project database has not been needed yet, 
+you need to notice `application.properties` file to be informed about database name.
+ 
+
 ## Notices
 **Notice two files first:** SpringSecurityConfig.java and login.js.
     

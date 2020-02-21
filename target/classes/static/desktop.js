@@ -1,7 +1,7 @@
 $(".app-content").ready(function () {
 
     // receive first login message
-    this.receiveFirstLoginMessage();
+    receiveFirstLoginMessage();
 
     // side bar menu clicked
     $(".desktop-side-bar-menu").click(function () {
@@ -11,16 +11,12 @@ $(".app-content").ready(function () {
     });
 })
 
-function loadPage(page) {
-    if (page === 'list-incident-by-employee') {
-        $('#app-content-load').load('features/incident_management/list-incident-by-employee/list-incident-by-employee.html');
-    }
-}
-
 function receiveFirstLoginMessage() {
-    const username = "user";
-    const password = "pass";
-    const command = {"whoIAm": "بهرام"};
+    // receive username and password from shared values window container
+    const username = window.authenticatedUsername;
+    const password = window.authenticatedPassword;
+    // create command
+    const command = {"whoIAm": username};
     $.ajax({
         url: serverUrl() + "/message/first-login",
         type: "POST",
@@ -39,7 +35,6 @@ function receiveFirstLoginMessage() {
 }
 
 function showFirstMessage(message) {
-    $("#first-login-message-alert").fadeIn(2000, function () {
-        $("#first-login-message-alert").html(message);
-    });
+    $("#first-login-message-alert").html(message);
+    $("#first-login-message-alert").fadeIn(2000).fadeOut(10000);
 }

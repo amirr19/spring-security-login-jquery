@@ -2,6 +2,7 @@ package ir.afarinesh.mctab.springsecurityloginjquery.core.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -35,7 +36,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/index.html").permitAll()
-                /*.antMatchers("/user/login").permitAll()*/
+                .antMatchers(HttpMethod.GET).permitAll() // permit all html, css, js
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic()
