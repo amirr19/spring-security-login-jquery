@@ -7,7 +7,7 @@ which connects to spring boot secured back-end project.
 **Notice two files first:** SpringSecurityConfig.java and login.js.
     
         
-In **login.js** notice this code:  
+In **`login.js`** notice this code:  
 ```javascript
 headers: {
             "Authorization": "Basic " + btoa(username + ":" + password)
@@ -27,8 +27,16 @@ success: function (data, textStatus) {
         error: function (errorMessage) {
             loginFailed();
         }
+```    
+look into `loginSuccessful()` method. we have to put `username` and `password` in 
+`shared value window container`. because further we need then for restful request in other pages.
+
+```javascript
+window.authenticatedUsername = username;
+window.authenticatedPassword = password;
 ```  
-In **SpringSecurityConfig.java** class notice that how we configure CORS by this code  
+
+In `SpringSecurityConfig.java` class notice that how we configure `CORS` by this code  
 ```java
 @Bean
     public CorsConfigurationSource corsConfigurationSource() {
