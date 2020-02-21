@@ -1,0 +1,55 @@
+.login-container {
+    width: 100%;
+    height: 100%;
+    background-color: #CFD8DC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background-color: white;
+    width: 480px;
+    height: 480px;
+    border-radius: 15px;
+    padding: 16px;
+    box-shadow: 5px 5px rgba(164, 164, 164, 0.2);
+}
+
+.login-header {
+    width: 100%;
+    text-align: center;
+    padding-top: 32px;
+    padding-bottom: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #607D8B;
+    letter-spacing: 2px;
+}
+
+.login-form {
+    padding-top: 32px;
+}
+
+.login-input {
+    height: 48px;
+}
+
+.login-button {
+    width: 100%;
+    margin-top: 32px;
+    height: 48px;
+    border-radius: 10px;
+    color: #455A64;
+    border-color: #607D8B;
+}
+
+.login-button:hover {
+    background-color: #607D8B;
+    border-color: #455A64;
+}
+
+.loginFailedMessage {
+    margin-top: 16px;
+    display: none;
+}
