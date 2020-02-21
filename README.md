@@ -55,7 +55,7 @@ In `SpringSecurityConfig.java` class notice that how we configure `CORS` by this
         return source;
     }
 ```
-also we need put this bellow code to enable CORS for spring security.  
+Also we need put this bellow code to enable CORS for spring security.  
 ``` java
 @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -64,4 +64,31 @@ also we need put this bellow code to enable CORS for spring security.
                 .and()
                 .csrf().disable()
 ...
+```
+
+And Finally notice what happend in desktop.js file. For sending request `username` and `password` 
+are taken from shared variable window. Use this code where ever you want to send request to secured spring boot.
+```javascript
+function receiveFirstLoginMessage() {
+    // receive username and password from shared values window container
+    const username = window.authenticatedUsername;
+    const password = window.authenticatedPassword;
+    // create command
+    const command = {"whoIAm": username};
+    $.ajax({
+        url: serverUrl() + "/message/first-login",
+        type: "POST",
+        data: JSON.stringify(command),
+        contentType: "application/json; charset=utf-8",
+        headers: {
+            "Authorization": "Basic " + btoa(username + ":" + password)
+        },
+        success: function (data, status) {
+            showFirstMessage(data.message);
+        },
+        error: function (errorMessage) {
+            alert("Some thing wrong happened!")
+        }
+    });
+}
 ```
